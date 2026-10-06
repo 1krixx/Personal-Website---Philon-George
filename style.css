@@ -1,11 +1,11 @@
-@import url('https://googleapis.com');
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
 
 
 body {
     background: url("pwb.png");
     
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     
     color: #2b2b2b;
     line-height: 1.6;
