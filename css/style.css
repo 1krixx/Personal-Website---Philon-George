@@ -2,7 +2,7 @@
 
 
 body {
-    background: url("img/pwb.png");
+    background: url('../img/backgroundOFFICIAL.jpg') no-repeat center center fixed;
     
     margin: 0;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -13,7 +13,7 @@ body {
 
    
 header {
-    background-color: #3d3d3d;
+    background-color: #293d4f;
     color: #ffffff;
     text-align: center;
     padding: 30px 20px;
@@ -27,7 +27,7 @@ nav ul {
     list-style-type: none;   
     padding: 0;
     margin: 0;
-    background-color: #595959;
+    background-color: #293d4f;
     text-align: center;
     width: 100%;
 }
@@ -114,12 +114,12 @@ table.table td {
 }
 
 th {
-    background-color: #595959;
+    background-color: #293d4f;
     color: #ffffff;
 }
 
 table.table thead th {
-    background-color: #595959;
+    background-color: #293d4f;
     color: #ffffff;
 }
 
@@ -129,7 +129,7 @@ tbody tr:nth-child(even) {
 
 
 footer {
-    background-color: #3d3d3d;
+    background-color: #293d4f;
     color: #cccccc;
     text-align: center;
     padding: 15px;
