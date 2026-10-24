@@ -152,3 +152,79 @@ footer {
     text-align: center;
     padding: 15px;
 }
+/* ===== Redesign additions ===== */
+
+/* Make the background image fill the screen */
+body {
+    background-size: cover;
+}
+
+/* Darker text and links so they are easy to read on the blue panels */
+main > section {
+    color: #111111;
+}
+
+main a {
+    color: #0a1a2b;
+}
+
+/* Navigation hover colour with better contrast */
+nav a:hover,
+nav a.nav-link:hover {
+    background-color: #4b6277;
+    color: #ffffff;
+}
+
+/* Images scale with the screen and keep their shape */
+img {
+    height: auto;
+}
+
+/* Figures and captions */
+figure {
+    margin: 0 0 15px;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Quick facts box on the About page */
+aside {
+    background-color: #ececec;
+    border-left: 4px solid #293d4f;
+    padding: 12px 16px;
+    margin: 15px 0;
+}
+
+/* Tablet screens (up to 991px wide) */
+@media (max-width: 991px) {
+    header {
+        padding: 20px 15px;
+    }
+
+    main > section {
+        padding: 15px;
+    }
+}
+
+/* Mobile screens (up to 575px wide) */
+@media (max-width: 575px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav li {
+        margin: 0 2px;
+    }
+
+    nav a {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+}
