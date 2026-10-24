@@ -151,3 +151,280 @@ footer {
     text-align: center;
     padding: 15px;
 }
+/* =========================================================
+   REDESIGN ADDITIONS (feature/personal-website-redesign)
+   ========================================================= */
+
+/* ---------- Colour variables (use these for any new rules) ---------- */
+:root {
+    --navy: #293d4f;        /* header, nav, footer, table headings */
+    --blue: #5193c9;        /* section panels */
+    --light: #ececec;       /* cards and article panels */
+    --ink: #111111;         /* dark text, passes contrast on --blue */
+    --link: #0a1a2b;        /* link colour, passes contrast on --blue and --light */
+}
+
+/* ---------- Page layout: footer stays at the bottom on short pages ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-size: cover;      /* background fills the screen on every device */
+    color: var(--ink);
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+/* ---------- Accessibility: contrast, links, focus, skip link ---------- */
+main > section {
+    color: var(--ink);           /* dark text on the blue panels (contrast above 4.5:1) */
+}
+
+main a {
+    color: var(--link);
+    text-decoration: underline;
+}
+
+main a:hover {
+    color: #000000;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #ffd54a;  /* clear keyboard focus ring */
+    outline-offset: 2px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;               /* hidden until it receives keyboard focus */
+    background: #ffffff;
+    color: var(--ink);
+    padding: 8px 14px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    left: 10px;
+    top: 10px;
+}
+
+/* Navigation: stronger hover contrast and a marker for the current page */
+nav a:hover,
+nav a.nav-link:hover {
+    background-color: #4b6277;
+    color: #ffffff;
+}
+
+nav a[aria-current="page"] {
+    border-bottom: 3px solid #ffd54a;
+}
+
+/* ---------- Images and figures ---------- */
+img {
+    height: auto;                /* keeps the correct ratio when images shrink */
+}
+
+figure {
+    margin: 0 0 15px;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 6px;
+}
+
+.profile-figure img {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;           /* crops the portrait into a neat square */
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    margin: 0 auto;
+}
+
+.profile-figure figcaption {
+    text-align: center;
+}
+
+.banner-figure img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* ---------- Hero section and buttons ---------- */
+.hero h2 {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--navy);
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 0 8px 8px 0;
+    border: 2px solid var(--navy);
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+main a.btn-cta {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.btn-cta:hover {
+    background-color: #1b2937;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.btn-cta-outline,
+main a.btn-cta-outline {
+    background-color: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+}
+
+.btn-cta-outline:hover,
+main a.btn-cta-outline:hover {
+    background-color: var(--ink);
+    color: #ffffff;
+}
+
+/* ---------- Cards, facts box and form ---------- */
+.highlight-card,
+#about article,
+.facts-box {
+    background-color: var(--light);
+    border-left: 4px solid var(--navy);
+    border-radius: 6px;
+    padding: 12px 16px;
+}
+
+/* Cards fill the full height of their grid column so each row lines up */
+.highlight-card,
+#portfolio article {
+    height: 100%;
+}
+
+#about article {
+    margin-bottom: 15px;
+}
+
+.facts-box dt {
+    font-weight: bold;
+}
+
+.facts-box dd {
+    margin: 0 0 10px;
+}
+
+address {
+    margin-bottom: 0;
+}
+
+.form-control:focus {
+    border-color: var(--navy);
+    box-shadow: 0 0 0 0.2rem rgba(41, 61, 79, 0.3);
+}
+
+caption {
+    color: var(--ink);
+    caption-side: top;
+}
+
+/* ---------- Footer links ---------- */
+footer a {
+    color: #ffffff;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (media queries)
+   Mobile: up to 575px | Tablet: 576px to 991px | Desktop: 992px and up
+   ========================================================= */
+
+/* Large desktop: give the content a little more room */
+@media (min-width: 1200px) {
+    .hero h2 {
+        font-size: 2.4rem;
+    }
+}
+
+/* Tablet and smaller: tighter header and spacing */
+@media (max-width: 991px) {
+    header {
+        padding: 22px 16px;
+    }
+
+    main > section {
+        padding: 16px;
+    }
+
+    .hero h2 {
+        font-size: 1.7rem;
+    }
+}
+
+/* Mobile: compact navigation so all four links fit on one row */
+@media (max-width: 575px) {
+    body {
+        background-attachment: scroll;   /* fixed backgrounds are unreliable on phones */
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav li {
+        margin: 0 2px;
+    }
+
+    nav a {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+
+    .btn-cta {
+        display: block;                  /* full-width, easy-to-tap buttons */
+        text-align: center;
+        margin-right: 0;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Respect visitors who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .btn-cta {
+        transition: none;
+    }
+}
