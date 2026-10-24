@@ -1,20 +1,36 @@
+/** @import loads fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@600&family=Playfair+Display:wght@700&family=Oswald:wght@600&family=Raleway:wght@700&display=swap');
-
-body {
-    background: url('../img/background.jpg') no-repeat center center fixed;
-    
-    margin: 0;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    
-    color: #2b2b2b;
-    line-height: 1.6;
+/*So, this wasnt done in class but after doing some research, :root means the whole page. Anything named with -- is a CSS variable.
+   Use it anywhere with var(--name). So, to change a colour across the whole site,
+    it can be changed here once instead of in many places.*/
+:root {
+    --navy: #293d4f;
+    --blue: #5193c9;
+    --light: #ececec;
+    --ink: #111111;
+    --link: #0a1a2b;
+}
+/* Smooth scrolling when a visitor clicks a link that jumps down the page */
+html {
+    scroll-behavior: smooth;
 }
 
-   
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--ink);
+    background: url('../img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* Header */
 header {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    background-color: #293d4f;
+    background-color: var(--navy);
     color: #ffffff;
     text-align: center;
     padding: 30px 20px;
@@ -23,15 +39,15 @@ header {
 header p {
     color: #cccccc;
 }
-
+/* Navigation */
 nav ul {
     border-bottom: 1px solid #cccccc;
     border-top: 1px solid #cccccc;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    list-style-type: none;   
+    list-style-type: none; /* removes the bullet points from the list */
     padding: 0;
     margin: 0;
-    background-color: #293d4f;
+    background-color: var(--navy);
     text-align: center;
     width: 100%;
 }
@@ -47,7 +63,7 @@ nav a {
     color: #f2f2f2;
     font-weight: bold;
 }
-
+/* This here is to override the bootstrap's own link colour */
 nav a.nav-link {
     color: #f2f2f2;
 }
@@ -58,167 +74,13 @@ nav a.nav-link {
     align-items: center;
     line-height: 1.2;
 }
-
+/*1.25 times the page's base font size, so icons scale with text settings */
 .navbar-nav .nav-link .fa {
     font-size: 1.25rem;
     margin-bottom: 4px;
 }
-
-nav a:hover,
-nav a.nav-link:hover {
-    background-color: #797979;
-    color: #dcf2f2;
-}
-
-main {
-    max-width: 1140px;
-    margin: 0 auto;
-}
-
-
-main > section {
-    background-color:#5193c9;
-    border: 1px solid #d9d9d9;
-    border-radius: 6px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-main > section > h2 {
-    border-bottom: 2px solid #999999;
-    padding-bottom: 8px;
-}
-
-
-#portfolio article {
-    background-color: #ececec;
-    border-left: 4px solid #777777;
-    padding: 10px 15px;
-    margin-bottom: 15px;
-}
-
-
-img, iframe, video {
-    max-width: 100%;
-    display: block;
-    margin: 15px 0;
-}
-
-.ratio iframe {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;  
-    margin-top: 10px;
-}
-
-th, td {
-    border: 1px solid #cccccc;
-    padding: 10px;
-    text-align: left;
-}
-
-table.table th,
-table.table td {
-    border: 1px solid #cccccc;
-    padding: 10px;
-    color: #2b2b2b;
-}
-
-th {
-    background-color: #293d4f;
-    color: #ffffff;
-}
-
-table.table thead th {
-    background-color: #293d4f;
-    color: #ffffff;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f7f7f7;
-}
-
-
-footer {
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    background-color: #293d4f;
-    color: #cccccc;
-    text-align: center;
-    padding: 15px;
-}
-/* =========================================================
-   REDESIGN ADDITIONS (feature/personal-website-redesign)
-   ========================================================= */
-
-/* ---------- Colour variables (use these for any new rules) ---------- */
-:root {
-    --navy: #293d4f;        /* header, nav, footer, table headings */
-    --blue: #5193c9;        /* section panels */
-    --light: #ececec;       /* cards and article panels */
-    --ink: #111111;         /* dark text, passes contrast on --blue */
-    --link: #0a1a2b;        /* link colour, passes contrast on --blue and --light */
-}
-
-/* ---------- Page layout: footer stays at the bottom on short pages ---------- */
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-size: cover;      /* background fills the screen on every device */
-    color: var(--ink);
-}
-
-main {
-    flex: 1;
-    width: 100%;
-}
-
-/* ---------- Accessibility: contrast, links, focus, skip link ---------- */
-main > section {
-    color: var(--ink);           /* dark text on the blue panels (contrast above 4.5:1) */
-}
-
-main a {
-    color: var(--link);
-    text-decoration: underline;
-}
-
-main a:hover {
-    color: #000000;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid #ffd54a;  /* clear keyboard focus ring */
-    outline-offset: 2px;
-}
-
-.skip-link {
-    position: absolute;
-    left: -9999px;               /* hidden until it receives keyboard focus */
-    background: #ffffff;
-    color: var(--ink);
-    padding: 8px 14px;
-    z-index: 1000;
-}
-
-.skip-link:focus {
-    left: 10px;
-    top: 10px;
-}
-
-/* Navigation: stronger hover contrast and a marker for the current page */
+/* :hover is a pseudo-class. It applies only while the mouse is over the link.
+   The comma lets one block of styles apply to two selectors. */
 nav a:hover,
 nav a.nav-link:hover {
     background-color: #4b6277;
@@ -228,10 +90,57 @@ nav a.nav-link:hover {
 nav a[aria-current="page"] {
     border-bottom: 3px solid #ffd54a;
 }
+/* Main content */
+main {
+    flex: 1;
+    width: 100%;
+}
+/* Every section that sits directly inside main becomes a blue panel.*/
+main > section {
+    background-color: var(--blue);
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: var(--ink);
+}
 
-/* ---------- Images and figures ---------- */
+main > section > h2 {
+    border-bottom: 2px solid #999999;
+    padding-bottom: 8px;
+}
+/* Links inside main use a dark colour with an underline so they stand out on the blue */
+main a {
+    color: var(--link);
+    text-decoration: underline;
+}
+
+main a:hover {
+    color: #7b1212;
+}
+/* :focus-visible shows an outline when someone navigates with the Tab key.*/
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #ffd54a;
+    outline-offset: 2px;
+}
+
+img, iframe, video {
+    max-width: 100%;
+    display: block;
+    margin: 15px 0;
+}
+
 img {
-    height: auto;                /* keeps the correct ratio when images shrink */
+    height: auto;
+}
+/* Bootstrap's .ratio box keeps the video at 16:9. This makes the iframe fill that box. */
+.ratio iframe {
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
 figure {
@@ -243,13 +152,13 @@ figcaption {
     font-style: italic;
     margin-top: 6px;
 }
-
+/* turning my profile image to a circle */
 .profile-figure img {
     width: 100%;
     max-width: 280px;
     aspect-ratio: 1 / 1;
-    object-fit: cover;           /* crops the portrait into a neat square */
-    border-radius: 50%;
+    object-fit: cover;
+    border-radius: 50%;  /* 50% rounding on a square makes a circle */
     border: 4px solid #ffffff;
     margin: 0 auto;
 }
@@ -264,8 +173,7 @@ figcaption {
     object-fit: cover;
     border-radius: 6px;
 }
-
-/* ---------- Hero section and buttons ---------- */
+/* home page hero and buttons */
 .hero h2 {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 2rem;
@@ -276,12 +184,12 @@ figcaption {
     background-color: var(--navy);
     color: #ffffff;
     padding: 10px 20px;
-    margin: 0 8px 8px 0;
+    margin: 0 8px 8px 0; /* four values go clockwise: top, right, bottom, left */
     border: 2px solid var(--navy);
     border-radius: 6px;
     font-weight: bold;
     text-decoration: none;
-    cursor: pointer;
+    cursor: pointer; /* shows the hand icon when hovering */
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -289,13 +197,13 @@ main a.btn-cta {
     color: #ffffff;
     text-decoration: none;
 }
-
+/* thrnslateY was also not done in class. transform is a CSS property that changes how an element is drawn on screen (moving, rotating, scaling) without changing the layout around it.translateY moves the button up 2px on hover so it seems to lift */
 .btn-cta:hover {
     background-color: #1b2937;
     color: #ffffff;
     transform: translateY(-2px);
 }
-
+/* Outline button, with a see through background with a dark border */
 .btn-cta-outline,
 main a.btn-cta-outline {
     background-color: transparent;
@@ -309,17 +217,15 @@ main a.btn-cta-outline:hover {
     color: #ffffff;
 }
 
-/* ---------- Cards, facts box and form ---------- */
 .highlight-card,
 #about article,
-.facts-box {
+#portfolio article {
     background-color: var(--light);
     border-left: 4px solid var(--navy);
     border-radius: 6px;
     padding: 12px 16px;
 }
 
-/* Cards fill the full height of their grid column so each row lines up */
 .highlight-card,
 #portfolio article {
     height: 100%;
@@ -329,12 +235,41 @@ main a.btn-cta-outline:hover {
     margin-bottom: 15px;
 }
 
-.facts-box dt {
-    font-weight: bold;
+#portfolio article {
+    margin-bottom: 15px;
+}
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+/*to override the bootstrap table styles*/
+th, td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
 }
 
-.facts-box dd {
-    margin: 0 0 10px;
+table.table th,
+table.table td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    color: var(--ink);
+}
+
+th {
+    background-color: var(--navy);
+    color: #ffffff;
+}
+
+table.table thead th {
+    background-color: var(--navy);
+    color: #ffffff;
+}
+/*picks every second row, giving a striped table that is easier to scan */
+tbody tr:nth-child(even) {
+    background-color: #f7f7f7;
 }
 
 address {
@@ -350,8 +285,15 @@ caption {
     color: var(--ink);
     caption-side: top;
 }
+/* Footer */
+footer {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    background-color: var(--navy);
+    color: #cccccc;
+    text-align: center;
+    padding: 15px;
+}
 
-/* ---------- Footer links ---------- */
 footer a {
     color: #ffffff;
 }
@@ -359,20 +301,14 @@ footer a {
 footer p {
     margin: 4px 0;
 }
-
-/* =========================================================
-   RESPONSIVE DESIGN (media queries)
-   Mobile: up to 575px | Tablet: 576px to 991px | Desktop: 992px and up
-   ========================================================= */
-
-/* Large desktop: give the content a little more room */
+/* Media queries for responsive design */
+/* min-width: only on screens that are at least 1200px wide */
 @media (min-width: 1200px) {
     .hero h2 {
         font-size: 2.4rem;
     }
 }
-
-/* Tablet and smaller: tighter header and spacing */
+/* max-width: on screens up to 991px wide (tablets and smaller). */
 @media (max-width: 991px) {
     header {
         padding: 22px 16px;
@@ -386,17 +322,16 @@ footer p {
         font-size: 1.7rem;
     }
 }
-
-/* Mobile: compact navigation so all four links fit on one row */
+/* Phones (575px and narrower).*/
 @media (max-width: 575px) {
     body {
-        background-attachment: scroll;   /* fixed backgrounds are unreliable on phones */
+        background-attachment: scroll;
     }
 
     header h1 {
         font-size: 1.8rem;
     }
-
+/* Smaller gaps and text so all four navigation links fit on one row */
     nav li {
         margin: 0 2px;
     }
@@ -407,7 +342,7 @@ footer p {
     }
 
     .btn-cta {
-        display: block;                  /* full-width, easy-to-tap buttons */
+        display: block;
         text-align: center;
         margin-right: 0;
     }
@@ -417,8 +352,8 @@ footer p {
         font-size: 0.95rem;
     }
 }
-
-/* Respect visitors who prefer less motion */
+/*  some people turn on "reduce motion" in their device settings.
+   This switches off the smooth scroll and button animation for them. This is for accessibility */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
