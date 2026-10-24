@@ -34,31 +34,74 @@
     </nav>
 
     
-    <main class="container py-4">
+        <main id="main-content" class="container py-4">
 
-       
-       <section id="home" class="p-4 mb-4">
-    <h2>Welcome to my website</h2>
-    <p>Hi, I'm Philon George, a second-year Computer Systems Technology student at T.A. Marryshow Community College in Grenada. Use the navigation bar to see my projects and how to contact me.</p>
-    <figure>
-        <img src="img/profile.jpg" alt="Portrait of Philon George" width="250">
-        <figcaption>That's me, Philon.</figcaption>
-    </figure>
-</section>
+        <!-- Hero section: introduction and profile photo -->
+        <section id="home" class="hero p-4 mb-4">
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-md-7">
+                    <h2>Welcome to my website</h2>
+                    <p class="lead">Hi, I'm Philon George, a second-year Computer Systems Technology student at T.A. Marryshow Community College in Grenada.</p>
+                    <p>This site is where I share who I am, what I have built, and how to reach me. Use the navigation bar or the buttons below to look around.</p>
+                    <p>
+                        <a class="btn-cta" href="portfolio.html">See my projects</a>
+                        <a class="btn-cta btn-cta-outline" href="contact.html">Contact me</a>
+                    </p>
+                </div>
+                <div class="col-12 col-md-5">
+                    <!-- Locally stored image -->
+                    <figure class="profile-figure">
+                        <img src="img/profile.jpg" width="961" height="1280" alt="Portrait of Philon George">
+                        <figcaption>That's me, Philon.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
 
-<!-- Section with an online image (hosted on Wikimedia Commons) -->
-<section id="grenada" class="p-4 mb-4">
-    <h2>Home sweet Grenada</h2>
-    <figure>
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Anse_Beach_Grenada.jpg?width=1000"
-             alt="Palm trees and sand along Grand Anse Beach in St. George's, Grenada">
-        <figcaption>
-            Grand Anse Beach, St. George's, Grenada. Photo by Varun Kapoor,
-            <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>,
-            via <a href="https://commons.wikimedia.org/wiki/File:Grand_Anse_Beach_Grenada.jpg">Wikimedia Commons</a>.
-        </figcaption>
-    </figure>
-</section>
+        <!-- Highlights section: shortcuts to the other pages -->
+        <section id="highlights" class="p-4 mb-4">
+            <h2>What you will find here</h2>
+            <div class="row g-3">
+                <div class="col-12 col-md-4">
+                    <article class="highlight-card">
+                        <h3><i class="fa fa-user" aria-hidden="true"></i> About</h3>
+                        <p>Learn about my studies at TAMCC and what I do outside of school.</p>
+                        <a href="about.html">Read more about me</a>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="highlight-card">
+                        <h3><i class="fa fa-briefcase" aria-hidden="true"></i> Portfolio</h3>
+                        <p>See the things I have built and the web skills I am developing.</p>
+                        <a href="portfolio.html">View my projects</a>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="highlight-card">
+                        <h3><i class="fa fa-envelope" aria-hidden="true"></i> Contact</h3>
+                        <p>Have a question or an idea? Send me a message.</p>
+                        <a href="contact.html">Get in touch</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Online image section: externally hosted photo with attribution -->
+        <section id="grenada" class="p-4 mb-4">
+            <h2>Home sweet Grenada</h2>
+            <figure class="banner-figure">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Anse_Beach_Grenada.jpg?width=1200"
+                     loading="lazy"
+                     alt="Palm trees and golden sand along Grand Anse Beach in St. George's, Grenada">
+                <figcaption>
+                    Grand Anse Beach, St. George's, Grenada. Photo by Varun Kapoor,
+                    <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>,
+                    via <a href="https://commons.wikimedia.org/wiki/File:Grand_Anse_Beach_Grenada.jpg">Wikimedia Commons</a>.
+                </figcaption>
+            </figure>
+        </section>
+
+    
     </main>
 
     

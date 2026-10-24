@@ -29,53 +29,69 @@
             <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fa fa-envelope" aria-hidden="true"></i><span>Contact</span></a></li>
         </ul>
     </nav>
+    <main id="main-content" class="container py-4">
 
-    <main class="container py-4">
+        <!-- Projects section -->
         <section id="portfolio" class="p-4 mb-4">
             <h2>My Projects</h2>
             <p>Here are some of the projects I've worked on:</p>
 
             <div class="row g-3">
-            <article class="col-12 col-lg-6">
-                <h3>Project One - Bicycle Build</h3>
-                <p>These are my two main bikes that I use, which I have built myself.</p>
-                <img src="img/bicycle-build.jpg" alt="Two bicycles">
-                <p>The one with the white tire in the back is my main bike, and I let my cousin use the other one.</p>
-            </article>
+                <div class="col-12 col-md-6 col-xl-4">
+                    <article>
+                        <h3>Project One - Bicycle Build</h3>
+                        <p>These are my two main bikes that I use, which I have built myself.</p>
+                        <figure>
+                            <img src="img/bicycle-build.jpg" width="1200" height="900" loading="lazy" alt="Two bicycles parked side by side">
+                            <figcaption>The one with the white tire in the back is my main bike, and I let my cousin use the other one.</figcaption>
+                        </figure>
+                    </article>
+                </div>
 
-            <article class="col-12 col-lg-6">
-                <h3>Project Two - Rosemary Infused Coconut Oil</h3>
-                <p>I also made a batch of rosemary infused coconut oil for cooking purposes. It can also be utilized for skincare.</p>
-                <img src="img/rosemary-coconut-oil.jpg" alt="Rosemary infused coconut oil">
-            </article>
-            </div>
+                <div class="col-12 col-md-6 col-xl-4">
+                    <article>
+                        <h3>Project Two - Rosemary Infused Coconut Oil</h3>
+                        <p>I also made a batch of rosemary infused coconut oil for cooking purposes. It can also be utilized for skincare.</p>
+                        <figure>
+                            <img src="img/rosemary-coconut-oil.jpg" width="1200" height="900" loading="lazy" alt="Jar of rosemary infused coconut oil">
+                            <figcaption>My homemade rosemary infused coconut oil.</figcaption>
+                        </figure>
+                    </article>
+                </div>
 
-            <h3>Skills that I currently have in Website Development</h3>
-            <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Skill</th>
-                        <th>Proficiency/Level</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>HTML</td>
-                        <td>Beginner</td>
-                    </tr>
-                    <tr>
-                        <td>CSS</td>
-                        <td>Beginner</td>
-                    </tr>
-                    <tr>
-                        <td>JavaScript</td>
-                        <td>Beginner</td>
-                    </tr>
-                </tbody>
-            </table>
+                <div class="col-12 col-md-6 col-xl-4">
+                    <article>
+                        <h3>Project Three - This Website</h3>
+                        <p>I built this site with HTML, CSS and Bootstrap, then redesigned it using a Git branch and a Pull Request on GitHub.</p>
+                        <p><a href="https://github.com/1krixx/Personal-Website---Philon-George">See the code on GitHub</a></p>
+                    </article>
+                </div>
             </div>
         </section>
+
+        <!-- Skills section -->
+        <section id="skills" class="p-4 mb-4">
+            <h2>Skills</h2>
+            <h3>Skills that I currently have in Website Development</h3>
+            <div class="table-responsive">
+                <table class="table">
+                    <caption>My current web development skills and levels</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Skill</th>
+                            <th scope="col">Proficiency/Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>HTML</td><td>Beginner</td></tr>
+                        <tr><td>CSS</td><td>Beginner</td></tr>
+                        <tr><td>JavaScript</td><td>Beginner</td></tr>
+                        <tr><td>Git and GitHub</td><td>Beginner</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
     </main>
     <!-- Site footer: copyright and quick links -->
     <footer>

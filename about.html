@@ -30,26 +30,67 @@
         </ul>
     </nav>
 
-    <main class="container py-4">
+        <main id="main-content" class="container py-4">
+
+        <!-- About section: who I am -->
         <section id="about" class="p-4 mb-4">
             <h2>About Me</h2>
-            <article>
-                <p>I'm Philon George, a year 2 student at the T.A Marryshow Community College (TAMCC), completing my Associate's degree in Computer Systems Technology (CST). Web design is an interesting course. Outside of school, I enjoy fishing and cycling.</p>
-            </article>
-            
+            <div class="row g-4">
+                <div class="col-12 col-lg-8">
+                    <article>
+                        <h3>Who I am</h3>
+                        <p>I'm Philon George, a year 2 student at the T.A Marryshow Community College (TAMCC), completing my Associate's degree in Computer Systems Technology (CST). Web design is an interesting course. Outside of school, I enjoy fishing and cycling.</p>
+                    </article>
+                    <article>
+                        <h3>Beyond the classroom</h3>
+                        <p>I like working with my hands. I built my own bicycles, and I have also made a batch of rosemary infused coconut oil. You can see both on my <a href="portfolio.html">portfolio page</a>.</p>
+                        <p>[Add one or two sentences about fishing here, in your own words.]</p>
+                    </article>
+                </div>
 
-            <img class="img-fluid" src="img/profile.jpg" alt="Philon George">
-            <div class="ratio ratio-16x9">
-                <iframe
-                    src="https://www.youtube.com/embed/dW0DTn2-AzA?si=St6AEioKVN2AOAur"
-                    title="The T.A. Marryshow Community College (TAMCC)"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+                <!-- Aside: quick facts that sit beside the main text -->
+                <aside class="col-12 col-lg-4" aria-label="Quick facts">
+                    <div class="facts-box">
+                        <h3>Quick facts</h3>
+                        <dl>
+                            <dt>College</dt>
+                            <dd>T.A. Marryshow Community College</dd>
+                            <dt>Programme</dt>
+                            <dd>Associate's degree in Computer Systems Technology</dd>
+                            <dt>Year</dt>
+                            <dd>Year 2 (CST2)</dd>
+                            <dt>Hobbies</dt>
+                            <dd>Fishing and cycling</dd>
+                        </dl>
+                    </div>
+                </aside>
             </div>
+
+            <!-- Locally stored image with caption -->
+            <figure class="profile-figure">
+                <img src="img/profile.jpg" width="961" height="1280" alt="Portrait of Philon George">
+                <figcaption>Philon George, CST year 2.</figcaption>
+            </figure>
         </section>
+
+        <!-- Video section: campus video -->
+        <section id="campus" class="p-4 mb-4">
+            <h2>My College</h2>
+            <figure>
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://www.youtube.com/embed/dW0DTn2-AzA?si=St6AEioKVN2AOAur"
+                        title="The T.A. Marryshow Community College (TAMCC)"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <figcaption>A video introducing T.A. Marryshow Community College (TAMCC).</figcaption>
+            </figure>
+        </section>
+
     </main>
 
         <!-- Site footer: copyright and quick links -->
