@@ -1,33 +1,35 @@
 # Personal Website - Philon George
 
-This project is a personal website and portfolio for Philon George. It serves as a digital home for sharing who he is, what he does, and how to get in touch.
+My personal website. I'm a CST year 2 student at T.A. Marryshow Community College (TAMCC), Grenada. It has four pages: Home, About, Portfolio and Contact.
 
-## Overview
+Live site: https://1krixx.github.io/Personal-Website---Philon-George/
 
-The site is designed to present:
+## Summary of the redesign
+- New colour theme with darker text for easier reading
+- Semantic HTML: header, nav, main, section, article, aside, figure and footer
+- Layout that works on mobile, tablet and desktop
+- Local images renamed and shrunk, plus one online image with credit
+- Cleaned up the folders and removed duplicate files
 
-- A short bio and introduction
-- Professional experience and background
-- Featured projects and work samples
-- Contact information and social links
-- A polished, modern personal brand presence
+## Technologies used
+HTML5, CSS3, Bootstrap 5, Font Awesome, Git, GitHub and GitHub Pages
 
-## Purpose
+## Directory structure
+- index.html, about.html, portfolio.html, contact.html (the pages)
+- css/style.css (the stylesheet)
+- img/ (all images)
+- screenshots/ (mobile, tablet and desktop screenshots)
 
-The goal of the website is to help visitors learn more about Philon George, highlight his work, and create a professional online presence that is easy to navigate and visually engaging.
+## How to view the website
+Open the live site link above, or download the repository and open index.html in a browser.
 
-## Typical sections
+## Responsive design
+I used Bootstrap's grid so columns stack on small screens, plus CSS media queries for tablet (991px) and mobile (575px). Images use max-width 100% and height auto so they shrink to fit. On mobile the navigation links get smaller so they stay on one row.
 
-- Hero section with name and tagline
-- About section
-- Projects or portfolio showcase
-- Resume or experience details
-- Contact section
+## Image credits
+- Beach photo: "Grand Anse Beach, St. George's, Grenada" by Varun Kapoor, CC BY 3.0, via Wikimedia Commons
+- All other photos are my own.
+- Background artwork: [where it came from]
 
-## Stack
-
-This project is typically built as a lightweight front-end website using modern web technologies such as HTML, CSS, and JavaScript, with a focus on responsive design and clean presentation.
-
-## Project status
-
-This repository is a personal portfolio project intended to showcase a developer or professional's identity and work online.
+## Reflection
+[150-250 words in your own words]
