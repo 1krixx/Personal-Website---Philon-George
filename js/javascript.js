@@ -47,3 +47,33 @@ function updateClock() {
 }
 
 createClock();    // run the function when the page loads  
+// back to top button
+function setupBackToTopButton() {
+
+    // Create the button and add it to the end of the page
+    const topButton = document.createElement("button");
+    topButton.id = "back-to-top";
+    topButton.type = "button";
+    topButton.textContent = "Back to top";
+    document.body.appendChild(topButton);
+
+    topButton.addEventListener("click", scrollToTop);
+    window.addEventListener("scroll", updateBackToTopButton);
+}
+
+function updateBackToTopButton() {
+    const topButton = document.getElementById("back-to-top");
+
+    // window.scrollY is how many pixels the page has been scrolled down
+    if (window.scrollY > 300) {
+        topButton.classList.add("visible");
+    } else {
+        topButton.classList.remove("visible");
+    }
+}
+
+function scrollToTop() {
+    window.scrollTo(0, 0);    //top left
+}
+
+setupBackToTopButton();    // run the function when the page loads
