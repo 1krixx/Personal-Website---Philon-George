@@ -363,3 +363,13 @@ footer p {
         transition: none;
     }
 }
+/* javascript code */
+/*welcome message */
+#welcome-message {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+/*live clock implementation  */
+#clock {
+    font-size: 0.9rem;
+}
