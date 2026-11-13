@@ -1,12 +1,20 @@
-// Welcome message
+// =====================================================
+// script.js - JavaScript features for Philon George's personal website
+// Features: 1) time-based welcome message  2) live date and time clock
+//           3) dark / light mode toggle    4) back-to-top button
+//           5) character counter for the contact form message box
+// =====================================================
+
+// ---------- Feature 1: Welcome message based on the time of day ----------
 function showWelcomeMessage() {
     const messageElement = document.getElementById("welcome-message");
-  
+
+    // This element only exists on the home page, so stop if we are on another page
     if (messageElement === null) {
         return;
     }
 
-    // Get the current hour from the person who is visiting the website's computer
+    // Get the current hour (0 to 23) from the visitor's computer
     const currentHour = new Date().getHours();
     let greeting = "";
 
@@ -18,11 +26,14 @@ function showWelcomeMessage() {
         greeting = "Good evening";
     }
 
-    // Put the greeting into the home page
+    // Put the greeting into the page
     messageElement.textContent = greeting + "! Thanks for stopping by.";
 }
-showWelcomeMessage(); // run the function when the page loads
-// clock
+
+showWelcomeMessage();    // run the function when the page loads
+
+
+// ---------- Feature 2: Live date and time clock in the footer ----------
 function createClock() {
     const footer = document.querySelector("footer");
 
@@ -35,26 +46,22 @@ function createClock() {
     clock.id = "clock";
     footer.appendChild(clock);
 
-    updateClock();                    
-    setInterval(updateClock, 1000); // Update the clock every second  
+    updateClock();                    // show the time straight away
+    setInterval(updateClock, 1000);   // then update it every 1000 milliseconds (1 second)
+}
 
 function updateClock() {
     const clock = document.getElementById("clock");
     const now = new Date();
 
-    
+    // toDateString() gives text like "Thu Nov 12 2026", toLocaleTimeString() gives "3:45:12 PM"
     clock.textContent = now.toDateString() + " | " + now.toLocaleTimeString();
 }
 
-createClock();    // run the function when the page loads  
-<<<<<<< Updated upstream
-// back to top button
-function setupBackToTopButton() {
+createClock();    // run the function when the page loads
 
-    // Create the button and add it to the end of the page
-=======
 
-//toggling between light and dark mode
+// ---------- Feature 3: Dark mode / light mode toggle ----------
 function setupThemeToggle() {
     const header = document.querySelector("header");
 
@@ -86,18 +93,19 @@ function toggleTheme(event) {
 
     if (document.body.classList.contains("dark-mode")) {
         toggleButton.textContent = "Light mode";
-        localStorage.setItem("theme", "dark");   
+        localStorage.setItem("theme", "dark");     // remember the choice
     } else {
         toggleButton.textContent = "Dark mode";
         localStorage.setItem("theme", "light");
     }
 }
 
-setupThemeToggle();    // run the function when the page load
-// back to top button
+setupThemeToggle();    // run the function when the page loads
+
+
+// ---------- Feature 4: Back-to-top button ----------
 function setupBackToTopButton() {
-    
->>>>>>> Stashed changes
+    // Create the button and add it to the end of the page
     const topButton = document.createElement("button");
     topButton.id = "back-to-top";
     topButton.type = "button";
@@ -120,11 +128,52 @@ function updateBackToTopButton() {
 }
 
 function scrollToTop() {
-<<<<<<< Updated upstream
-    window.scrollTo(0, 0);    //top left
-=======
-    window.scrollTo(0, 0);    // top left
->>>>>>> Stashed changes
+    window.scrollTo(0, 0);    // jump to the top-left of the page
 }
 
 setupBackToTopButton();    // run the function when the page loads
+
+
+// ---------- Feature 5: Character counter for the contact message box ----------
+// The most characters allowed in the message box
+const MESSAGE_MAX_LENGTH = 300;
+
+function setupCharacterCounter() {
+    const messageBox = document.getElementById("message");
+
+    // The message box only exists on the contact page
+    if (messageBox === null) {
+        return;
+    }
+
+    // Stop the visitor typing more than the maximum
+    messageBox.maxLength = MESSAGE_MAX_LENGTH;
+
+    // Create a paragraph for the counter and place it right under the message box
+    const counter = document.createElement("p");
+    counter.id = "char-counter";
+    messageBox.parentNode.appendChild(counter);
+
+    // "input" fires every time the visitor types, pastes or deletes text
+    messageBox.addEventListener("input", updateCharacterCounter);
+    updateCharacterCounter();
+}
+
+function updateCharacterCounter() {
+    const messageBox = document.getElementById("message");
+    const counter = document.getElementById("char-counter");
+
+    // .value.length is the number of characters currently typed
+    const charactersLeft = MESSAGE_MAX_LENGTH - messageBox.value.length;
+
+    counter.textContent = charactersLeft + " of " + MESSAGE_MAX_LENGTH + " characters remaining";
+
+    // Turn the counter into a warning when fewer than 50 characters are left
+    if (charactersLeft < 50) {
+        counter.classList.add("counter-warning");
+    } else {
+        counter.classList.remove("counter-warning");
+    }
+}
+
+setupCharacterCounter();    // run the function when the page loads
