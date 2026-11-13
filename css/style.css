@@ -443,3 +443,17 @@ body.dark-mode tbody tr:nth-child(even) {
 #back-to-top:hover {
     background-color: #1b2937;
 }
+/* character counter under the message box */
+#char-counter {
+    font-size: 0.9rem;
+    margin: 6px 0 0;
+}
+
+#char-counter.counter-warning {
+    color: #4a000c;
+    font-weight: bold;
+}
+
+body.dark-mode #char-counter.counter-warning {
+    color: #ffb3a7;
+}

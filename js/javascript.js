@@ -1,20 +1,15 @@
-// =====================================================
-// script.js - JavaScript features for Philon George's personal website
-// Features: 1) time-based welcome message  2) live date and time clock
-//           3) dark / light mode toggle    4) back-to-top button
-//           5) character counter for the contact form message box
-// =====================================================
 
-// ---------- Feature 1: Welcome message based on the time of day ----------
+
+// Welcome message based on the time of day (home page only )
 function showWelcomeMessage() {
     const messageElement = document.getElementById("welcome-message");
 
-    // This element only exists on the home page, so stop if we are on another page
+    
     if (messageElement === null) {
         return;
     }
 
-    // Get the current hour (0 to 23) from the visitor's computer
+    // Get the current hour (0 to 23) from the person who is visiting the wwebsite's computer
     const currentHour = new Date().getHours();
     let greeting = "";
 
@@ -26,14 +21,14 @@ function showWelcomeMessage() {
         greeting = "Good evening";
     }
 
-    // Put the greeting into the page
+    // Put the greeting 
     messageElement.textContent = greeting + "! Thanks for stopping by.";
 }
 
 showWelcomeMessage();    // run the function when the page loads
 
 
-// ---------- Feature 2: Live date and time clock in the footer ----------
+//  Live date and time clock in the footer
 function createClock() {
     const footer = document.querySelector("footer");
 
@@ -46,22 +41,22 @@ function createClock() {
     clock.id = "clock";
     footer.appendChild(clock);
 
-    updateClock();                    // show the time straight away
-    setInterval(updateClock, 1000);   // then update it every 1000 milliseconds (1 second)
+    updateClock();                    
+    setInterval(updateClock, 1000);   
 }
 
 function updateClock() {
     const clock = document.getElementById("clock");
     const now = new Date();
 
-    // toDateString() gives text like "Thu Nov 12 2026", toLocaleTimeString() gives "3:45:12 PM"
+    
     clock.textContent = now.toDateString() + " | " + now.toLocaleTimeString();
 }
 
 createClock();    // run the function when the page loads
 
 
-// ---------- Feature 3: Dark mode / light mode toggle ----------
+// Dark mode / light mode 
 function setupThemeToggle() {
     const header = document.querySelector("header");
 
