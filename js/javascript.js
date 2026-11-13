@@ -47,10 +47,57 @@ function updateClock() {
 }
 
 createClock();    // run the function when the page loads  
+<<<<<<< Updated upstream
 // back to top button
 function setupBackToTopButton() {
 
     // Create the button and add it to the end of the page
+=======
+
+//toggling between light and dark mode
+function setupThemeToggle() {
+    const header = document.querySelector("header");
+
+    if (header === null) {
+        return;
+    }
+
+    // Create the button and add it to the header
+    const toggleButton = document.createElement("button");
+    toggleButton.id = "theme-toggle";
+    toggleButton.type = "button";
+    toggleButton.textContent = "Dark mode";
+    header.appendChild(toggleButton);
+
+    // If the visitor chose dark mode on an earlier page, switch it on here too
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleButton.textContent = "Light mode";
+    }
+
+    toggleButton.addEventListener("click", toggleTheme);
+}
+
+function toggleTheme(event) {
+    const toggleButton = event.target;
+
+    // classList.toggle adds the class if it is missing, and removes it if it is there
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        toggleButton.textContent = "Light mode";
+        localStorage.setItem("theme", "dark");   
+    } else {
+        toggleButton.textContent = "Dark mode";
+        localStorage.setItem("theme", "light");
+    }
+}
+
+setupThemeToggle();    // run the function when the page load
+// back to top button
+function setupBackToTopButton() {
+    
+>>>>>>> Stashed changes
     const topButton = document.createElement("button");
     topButton.id = "back-to-top";
     topButton.type = "button";
@@ -73,7 +120,11 @@ function updateBackToTopButton() {
 }
 
 function scrollToTop() {
+<<<<<<< Updated upstream
     window.scrollTo(0, 0);    //top left
+=======
+    window.scrollTo(0, 0);    // top left
+>>>>>>> Stashed changes
 }
 
 setupBackToTopButton();    // run the function when the page loads

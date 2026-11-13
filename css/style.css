@@ -373,3 +373,51 @@ footer p {
 #clock {
     font-size: 0.9rem;
 }
+/* dark / light mode button in the header */
+#theme-toggle {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    padding: 4px 16px;
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+#theme-toggle:hover {
+    background-color: #ffffff;
+    color: #293d4f;
+}
+
+/* Dark mode - redefine the colour variables, so every rule that uses var(--) would change automatically */
+body.dark-mode {
+    --navy: #101a24;
+    --blue: #1f2f3d;
+    --light: #2b3d4f;
+    --ink: #f2f2f2;
+    --link: #9fd0ff;
+}
+
+/* A few colours are written directly in the CSS prior to these new css lines, so they need their own dark versions */
+body.dark-mode main a:hover {
+    color: #ffffff;
+}
+
+body.dark-mode .btn-cta {
+    border-color: #f2f2f2;
+}
+
+body.dark-mode .btn-cta-outline:hover,
+body.dark-mode main a.btn-cta-outline:hover {
+    background-color: #f2f2f2;
+    color: #111111;
+}
+
+body.dark-mode table.table {
+    --bs-table-bg: #1f2f3d;
+    --bs-table-color: #f2f2f2;
+}
+
+body.dark-mode tbody tr:nth-child(even) {
+    background-color: #2b3d4f;
+}
