@@ -98,7 +98,7 @@ function toggleTheme(event) {
 setupThemeToggle();    // run the function when the page loads
 
 
-// ---------- Feature 4: Back-to-top button ----------
+//  Back to top button 
 function setupBackToTopButton() {
     // Create the button and add it to the end of the page
     const topButton = document.createElement("button");
@@ -129,7 +129,7 @@ function scrollToTop() {
 setupBackToTopButton();    // run the function when the page loads
 
 
-// ---------- Feature 5: Character counter for the contact message box ----------
+//Character counter for the contact message box 
 // The most characters allowed in the message box
 const MESSAGE_MAX_LENGTH = 300;
 
