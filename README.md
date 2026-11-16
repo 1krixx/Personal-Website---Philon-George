@@ -65,7 +65,7 @@ Screenshots
 ![Character counter on the contact form](screenshots/Character%20Count.png)
 
 ## JavaScript reflection
-For this assignment, I added five JavaScript features to my personal website: a time-based welcome message, a live clock, a dark mode toggle, a back-to-top button, and a character counter for the contact form. Writing each of these as its own function showed me how useful functions are. I could name a task, keep it organised, and call it whenever I needed it instead of repeating code.
+For this assignment, I added five JavaScript features to my personal website which were: a time-based welcome message, a live clock, a dark mode toggle, a back-to-top button, and a character counter for the contact form. Writing each of these as its own function showed me how convenient functions are due to them being reusable
 
  I was surprised by some of the things JavaScript can do. I did not know it could create new HTML elements from scratch with createElement, update a clock every second with setInterval, or remember a visitor's theme choice with localStorage. Switching one class with classList.toggle to change the colours of a whole website also surprised me.
 
